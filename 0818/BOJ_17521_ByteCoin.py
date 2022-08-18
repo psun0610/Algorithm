@@ -3,7 +3,7 @@ bytecoin = [int(input()) for i in range(n)]
 coin = 0
 for i in range(n-1):
     if bytecoin[i] < bytecoin[i+1]:     # 매수
-        if w // bytecoin[i+1] > 0:
+        if w // bytecoin[i] > 0:
             coin = w // bytecoin[i]
             w = w - coin * bytecoin[i]
 
