@@ -42,20 +42,23 @@ def solution(genres, plays):
 
 def solution(genres, plays):
     answer = []
-    album = {}
-    for i in range(len(genres)):
-        if genres[i] not in album:
-            album[genres[i]] = [[i, plays[i]]]
+    dic1 = {}
+    dic2 = {}
+    
+    for i, (g, v) in enumerate(zip(genres, plays)):
+        if g not in dic1:
+            dic1[g] = [(i, v)]
         else:
-            album[genres[i]].append([i, plays[i]])
-
-    genre_play = {}
-    for genre in genres:
-        sum_ = 0
-        for i in album[genre]:
-            sum_ += i[1]
-        genre_play[genre] = sum_
-
+            dic1[g] += [(i, v)]
+        
+        if g not in dic2:
+            dic2[g] = v
+        else:
+            dic2[g] += v
+    
+    for key, value in sorted(dic2.items(), key = lambda x:x[1], reverse=True):   # 재생이 많이 된 장르 순
+        for value1, value2 in sorted(dic1[key], key = lambda x:x[1], reverse=True)[:2]:     # 장르별로 재생이 많이 된 곡 순
+            answer.append(value1)
     return answer
 
 print(solution(["classic", "pop", "classic", "classic", "pop"], [500, 600, 150, 150, 2500]))
