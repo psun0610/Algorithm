@@ -15,18 +15,18 @@
 #         print(star[i][j], end='')
 #     print()
 
+
 def PrintStar(n):
     if n == 3:
         return ['***', '* *', '***']
-    list_ = PrintStar(n//3)    
+    list_ = PrintStar(n//3)
     star = []
-    for i in range(n//3):
-        star.append(list_[i] * 3)
-    for i in range(n//3):
-        star.append(list_[i] + ' ' * (n//3) + list_[i])
-    for i in range(n//3):
-        star.append(list_[i] * 3)
-    
+    for i in list_:
+        star.append(i * 3)
+    for i in list_:
+        star.append(i + ' ' * (n//3) + i)
+    for i in list_:
+        star.append(i * 3)
     return star
 
 n = int(input())
