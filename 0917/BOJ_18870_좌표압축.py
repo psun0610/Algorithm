@@ -6,7 +6,7 @@ for i in range(len(sorted_numbers)):
     ordered[sorted_numbers[i]] = i
 
 for number in numbers:
-    print(ordered.get(number), end='')
+    print(ordered.get(number), end=' ')
 
 
 # 출력부만 다름
