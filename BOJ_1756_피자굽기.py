@@ -17,9 +17,6 @@ for pizza in pizzas:
         else:
             bottom = tmp
             break
-        # print(
-        #     f"피자 크기: {pizza}, 오븐 너비: {oven[oven_depth]}\n오븐 깊이: {oven_depth+1}, tmp: {tmp}, bottom: {bottom}\n"
-        # )
 if bottom <= 0:
     print(0)
 else:
