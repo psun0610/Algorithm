@@ -1,13 +1,7 @@
 const decrypteArr = (n, arr) => {
     let newArr = [];
     for(let i=0; i<n; i++) {
-        let str = "";
-        while(arr[i] > 0) {
-            str = (arr[i] % 2).toString() + str;
-            arr[i] = parseInt(arr[i] / 2);
-        }
-        
-        str = "0".repeat(n - str.length) + str;
+        let str = "0".repeat(n-arr[i].toString(2).length) + arr[i].toString(2);
         newArr.push(str);
     }
     return newArr;
