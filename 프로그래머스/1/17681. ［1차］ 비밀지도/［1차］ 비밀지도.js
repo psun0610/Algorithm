@@ -21,8 +21,7 @@ function solution(n, arr1, arr2) {
     for(let i=0; i<n; i++) {
         let str = "";
         for(let j=0; j<n; j++) {
-            if(arr1[i][j] === "0" && arr2[i][j] === "0") str += " ";
-            else str += "#";
+            str += (arr1[i][j] === "0" && arr2[i][j] === "0") ? " " : "#";
         }
         answer.push(str);
     }
